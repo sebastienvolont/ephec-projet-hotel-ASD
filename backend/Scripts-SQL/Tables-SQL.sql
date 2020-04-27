@@ -35,8 +35,9 @@ nomChambre CHAR (30)
 Position
 )
 
-J’ai créé des domaine pour :
+/* J’ai créé des domaine pour :
 -	Sexe DSEXE
 -	etatCivil  DETAT_CIVIL
--	pension DPENSION
+-	pension DPENSION */ 
+
 
