@@ -1,7 +1,7 @@
 /*------------------------------------------------------------Fonctions------------------------------------------------------------*/
 CREATE FUNCTION "DBA"."getPath"()
 returns long varchar;
-deterministic;
+DETERMINISTIC;
 BEGIN
  declare dbPath long varchar;
  declare dbName long varchar;
