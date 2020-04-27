@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------PROCEDURES----------------------------------------------------------------*/
-CREATE PROCEDURE "http_getPage"in url char(255))
+CREATE PROCEDURE "http_getPage" (in url char(255))
 BEGIN
     call sa_set_http_header('Content-Type', 'text/html; charset=utf-8');
     call sa_set_http_header('Access-Control-Allow-Origin', '*');
