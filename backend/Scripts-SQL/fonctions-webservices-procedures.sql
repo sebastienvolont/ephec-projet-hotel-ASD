@@ -1,4 +1,20 @@
-/*----------------------------------------------------------------PROCEDURES----------------------------------------------------------------*/
+/*------------------------------------------------------------Fonctions------------------------------------------------------------*/
+CREATE FUNCTION "DBA"."getPath"()
+returns long varchar
+deterministic
+BEGIN
+ declare dbPath long varchar;
+ declare dbName long varchar;
+
+ set dbPath = (select db_property ('file'));    
+ set dbName = (select db_property('name')) + '.db';
+ set dbPath = left(dbPath, length(dbPath)-length(dbName)); 
+ --
+ return dbPath;
+END;
+
+
+/*------------------------------------------------------------PROCEDURES-----------------------------------------------------------*/
 CREATE PROCEDURE "http_getPage" (in url char(255))
 BEGIN
     call sa_set_http_header('Content-Type', 'text/html; charset=utf-8');
@@ -27,7 +43,7 @@ BEGIN
   select xp_read_file(dba.getPath() || 'img\' || url);
 END;
 
-/*----------------------------------------------------------------Webservices--------------------------------------------------------------*/
+/*--------------------------------------------------------------Webservices--------------------------------------------------------*/
 
 CREATE SERVICE "page" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call dba.http_getPage(:url);
 
