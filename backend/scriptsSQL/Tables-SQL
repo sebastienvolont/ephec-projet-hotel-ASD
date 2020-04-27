@@ -5,11 +5,9 @@ prenomClient CHAR(30),
 clientDateNaissance DATE,
 sexeClient DSEXE,
 etatCivilClient DETATCIVIL,
-professionClient CHAR(30),
 nationaliteClient CHAR(30),
 mailClient CHAR(30),
 adresseClient CHAR(50),
-dateArrivee DATE
 )
 
 CREATE TABLE RESERVATIONS(
