@@ -1,7 +1,7 @@
 /*------------------------------------------------------------Fonctions------------------------------------------------------------*/
 CREATE FUNCTION "getPath"()
-returns long varchar;
-DETERMINISTIC;
+returns long varchar
+DETERMINISTIC
 BEGIN
  declare dbPath long varchar;
  declare dbName long varchar;
