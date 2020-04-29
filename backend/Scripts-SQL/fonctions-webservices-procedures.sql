@@ -1,5 +1,5 @@
 /*------------------------------------------------------------Fonctions------------------------------------------------------------*/
-CREATE FUNCTION "DBA"."getPath"()
+CREATE FUNCTION "getPath"()
 returns long varchar;
 DETERMINISTIC;
 BEGIN
@@ -9,7 +9,7 @@ BEGIN
  set dbPath = (select db_property ('file'));    
  set dbName = (select db_property('name')) + '.db';
  set dbPath = left(dbPath, length(dbPath)-length(dbName)); 
- --
+ 
  return dbPath;
 END;
 
