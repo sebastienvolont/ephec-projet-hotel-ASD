@@ -1,0 +1,66 @@
+
+----------------------------------------------------------------------------------------------------------------JS du Webservice ----------------------------------------------------------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded',initPage);
+
+function initPage(){
+    let formActivitee = document.getElementById('formActivitees');
+    formActivitee.addEventListener('submit', soumettreRequete);
+}
+
+function soumettreRequete(event){
+    event.preventDefault();
+    let form = this;
+    envoyerRequete(form.jour.value, form.typeActivitee.value);
+}
+
+function envoyerRequete(jour, typeActivitee){
+    let xhr = new XMLHttpRequest();
+    xhr.open('get', 'http://localhost/getActivitees?jour=' + jour + '&typeActi=' + typeActivitee, true);
+    xhr.onload = function traiterReponse(){
+        affichage(JSON.parse(xhr.responseText));
+    };
+    xhr.send();
+}
+
+function affichage(data){
+    let str = "<table id='affichageTable'>";
+    let keys = Object.keys(data[0]);
+    str += "<tr>";
+    str += "<th> </th>";
+    str += "<th><i> Activitée </i></th>";
+    str += "<th><i>Nombre de personnes</i></th>";
+    str += "<th><i>Prix de l'activitée </i></th>";
+    str += "<th><i>Jour de la semaine </i></th>";
+    str += "<th><i>Horaires</i></th>";
+
+
+    str += "</tr>";
+    for(let d in data){
+        str += "<tr>";
+        str += "<td>" + "<img src='img/Activitees/" + data[d].nomActivitee + ".jpg'>" + "</td>";
+        str += "<td>" + data[d].nomActivitee + "</td>";
+        str += "<td>" + 'Minimum ' + data[d].nbrPersonne+ ' personnes' + "</td>";
+        str += "<td>" + data[d].prix + "€ par personne "+ "</td>";
+        str += "<td>" + data[d].jourSemaine + "</td>";
+        str += "<td>" + "De "+ data[d].horaires + "</td>";
+        str += "</tr>";
+        str += "</section>";
+    }
+    str += "</table>";
+    document.getElementById("affichage").innerHTML = str;
+}
+²²
+-----------------------------------------------------------------------------------------------------Services et procédures-------------------------------------------------------------------------------------------------------
+
+
+CREATE SERVICE "getActivitees" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS CALL proc_getActivitee(:jour,:typeActi);
+
+ALTER PROCEDURE "DBA"."proc_getActivitee" (in jour char(30), in typeActi char(20))
+RESULT (nomActivitee char(50), nbrPersonne integer, prix integer, jourSemaine char(20), horaires char(50),nomAgent char(60), prenomAgent char(60))
+BEGIN 
+    call sa_set_http_header('Content-Type', 'application/json');
+    call sa_set_http_header('Access-Control-Allow-Origin', '*');
+    SELECT nomActivitee, nbrPersonne, prix, jourSemaine, horaires, t2.prenomAgent, t2.nomAgent from ACTIVITEES AS t1 join AGENTS as t2 on t1.IdAgent = t2.IdAgent where jour = jourSemaine and typeActi = typeActivitee
+END
+
+
