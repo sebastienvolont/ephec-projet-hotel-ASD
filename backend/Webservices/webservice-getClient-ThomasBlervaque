@@ -19,3 +19,75 @@ USER "DBA"
 URL ON
 METHODS 'GET'
 AS CALL sp_getClient(:lenom,:leprenom,:dteNaiss,:lemail)
+
+/***********************************************************************JS*************************************************************/
+
+function client(){ //
+	event.preventDefault();
+	if(!validationemail()){
+		console.log("On stop adresse email invalide.");
+	}
+	else{
+		if(checkBirthDate()){
+			console.log("Desolé vous n'êtes pas majeur")
+		}
+		else{
+				if(form1.dateFin.value <= form1.dateDebut.value){
+				alert("La date de fin séjour ne peut être inférieure à la date du début");
+				console.log("on stop date du sejour invalide")
+			}
+			else{
+				let xhr = new XMLHttpRequest();
+				xhr.open('GET','http://localhost/getClient?lenom=' + form1.name.value +'&leprenom=' + form1.firstName.value+ '&dteNaiss='+ form1.dateNaiss.value+ '&lemail=' + form1.emailClient.value,true);
+				xhr.onload=function titi(){
+					let reponse = JSON.stringify(xhr.responseText);
+					if(xhr.readyState == 4 && xhr.status == 200){ 
+						getidClient();
+					}
+				}
+				xhr.send();
+				console.log("fonction client fait");
+			}
+		}
+	}
+}
+
+function reservation(idClient){
+	console.log(idClient);
+	event.preventDefault();
+	let xhr = new XMLHttpRequest();
+	xhr.open('GET','http://localhost/getReservation?ladateDeb=' + form1.dateDebut.value + '&ladateFin=' + form1.dateFin.value + '&leprixTotal='+ calculPrixFinal() +'&clientId=' +idClient+ '&lidchambre='+form1.typeChambre.value,true);
+	xhr.onload=function toto(){
+		let reponse = JSON.stringify(xhr.responseText);
+	}
+	xhr.send();
+	console.log("fonction reservation fait");
+	document.getElementById("zoneT").innerHTML = "<p>Votre chambre à bien été reserver pour la date du " + form1.dateDebut.value + " jusqu'au " + form1.dateFin.value + " Vous devrez payer sur place " + calculPrixFinal() + " Euros"
+}
+
+function getidClient(){
+	event.preventDefault();
+	let xhr = new XMLHttpRequest();
+	xhr.open('GET','http://localhost/getIdClient?lenom=' + form1.name.value +'&leprenom=' + form1.firstName.value + '&dteNaiss='+ form1.dateNaiss.value,true);
+    xhr.onload=function bobo(){
+		console.log(xhr.responseText);
+		if(xhr.readyState == 4 && xhr.status == 200){ 
+        let reponseid = JSON.parse(xhr.responseText)[0]["idCl"];
+		reservation(reponseid);		
+		} 
+	}
+	xhr.send();
+	console.log("getidClient");
+}
+
+function initPage(){
+	let xhr = new XMLHttpRequest();
+	xhr.open('GET','http://localhost/getListeChambre',true);
+	
+	xhr.onload=function makeTbChambres(){
+	let tableauChambres = (xhr.responseText)
+	document.getElementById("typeChambre").innerHTML = tableauChambres;
+	}
+	xhr.send();	
+	console.log('fait');
+}
