@@ -12,3 +12,10 @@ ENDIF;
 END
 
 
+CREATE SERVICE "getClient"
+TYPE 'RAW'
+AUTHORIZATION OFF
+USER "DBA"
+URL ON
+METHODS 'GET'
+AS CALL sp_getClient(:lenom,:leprenom,:dteNaiss,:lemail)
