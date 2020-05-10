@@ -1,3 +1,4 @@
+//Thomas Blervaque 
 
 CREATE PROCEDURE "DBA"."sp_getIdClient"(in lenom char(50),leprenom char(50),dteNaiss DATE)
 RESULT(idCl INTEGER)
