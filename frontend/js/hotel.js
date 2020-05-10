@@ -10,6 +10,7 @@ function client(){
 		}
 		else{
 				if(form1.dateFin.value <= form1.dateDebut.value){
+				alert("La date de fin séjour ne peut être inférieure à la date du début");
 				console.log("on stop date du sejour invalide")
 			}
 			else{
@@ -32,12 +33,13 @@ function reservation(idClient){
 	console.log(idClient);
 	event.preventDefault();
 	let xhr = new XMLHttpRequest();
-	xhr.open('GET','http://localhost/getReservation?ladateDeb=' + form1.dateDebut.value + '&ladateFin=' + form1.dateFin.value + '&laformule=' + form1.typeFormule.value +'&leprixTotal='+ calculPrixFinal() +'&clientId=' +idClient+ '&lidchambre='+form1.typeChambre.value,true);
+	xhr.open('GET','http://localhost/getReservation?ladateDeb=' + form1.dateDebut.value + '&ladateFin=' + form1.dateFin.value + '&leprixTotal='+ calculPrixFinal() +'&clientId=' +idClient+ '&lidchambre='+form1.typeChambre.value,true);
 	xhr.onload=function toto(){
 		let reponse = JSON.stringify(xhr.responseText);
 	}
 	xhr.send();
 	console.log("fonction reservation fait");
+	document.getElementById("zoneT").innerHTML = "<p>Votre chambre à bien été reserver pour la date du " + form1.dateDebut.value + " jusqu'au " + form1.dateFin.value + " Vous devrez payer sur place " + calculPrixFinal() + " Euros"
 }
 
 function getidClient(){
@@ -134,7 +136,7 @@ function calculPrixFinal(){
 function chargement(){
 	let xhr = new XMLHttpRequest();
 	xhr.open('GET','http://localhost/descriptionChambre',true);
-	xhr.onload = function test() {
+	xhr.onload = function test(){
 		affichage(JSON.parse(xhr.responseText));
 	}
 	xhr.send();
