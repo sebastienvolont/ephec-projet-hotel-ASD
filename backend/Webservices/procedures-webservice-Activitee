@@ -1,6 +1,6 @@
 //VOLONT Sébastien
 
------------------------------------------------------------------------------------------------------Services et procédures-------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------Services et procédures-------------------------------------------------------------------------------------------------------
 
 
 CREATE SERVICE "getActivitees" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS CALL proc_getActivitee(:jour,:typeActi);
@@ -13,7 +13,10 @@ BEGIN
     SELECT nomActivitee, nbrPersonne, prix, jourSemaine, horaires, t2.prenomAgent, t2.nomAgent from ACTIVITEES AS t1 join AGENTS as t2 on t1.IdAgent = t2.IdAgent where jour = jourSemaine and typeActi = typeActivitee
 END
 
-----------------------------------------------------------------------------------------------------------------JS du Webservice ----------------------------------------------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------JS du Webservice ----------------------------------------------------------------------------------------------------------------------
 document.addEventListener('DOMContentLoaded',initPage);
 
 function initPage(){
