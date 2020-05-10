@@ -19,6 +19,7 @@ backend : Des webservices (avec les procédures associées) :\
 
 frontend : Une page web (html, js, css) permettant d'appeler les webservices et de traiter les réponses, qui propose une interface utilisateur pour:\
 -Réserver sa chambre\
+- Réserver une table au restaurant\
 -Encoder ses informations (nom, prénom, nombre de personne, date)\
 -Permettant de voyager sur différente page du site (Accueil, réservation, Chambres, Contact...)\
 
