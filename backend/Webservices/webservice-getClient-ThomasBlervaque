@@ -1,4 +1,4 @@
-ALTER PROCEDURE "DBA"."sp_getClient"(in lenom char(50),leprenom char(50),dteNaiss DATE ,lemail char(70))
+CREATE PROCEDURE "DBA"."sp_getClient"(in lenom char(50),leprenom char(50),dteNaiss DATE ,lemail char(70))
 RESULT (nom char(50),prenom char(50),dateNaiss DATE,mail char(70))
 BEGIN 
 call sa_set_http_header('Access-Control-Allow-Origin','*');
