@@ -1,4 +1,4 @@
-ALTER FUNCTION "DBA"."idChambre"()
+CREATE FUNCTION "DBA"."idChambre"()
 RETURNS CHAR(10)
 DETERMINISTIC
 BEGIN
@@ -7,7 +7,7 @@ BEGIN
 	RETURN id_chambre;
 END;
                         
-ALTER FUNCTION "DBA"."idClient"( IN nomClt CHAR(30),prenomClt CHAR(30) )
+CREATE FUNCTION "DBA"."idClient"( IN nomClt CHAR(30),prenomClt CHAR(30) )
 RETURNS CHAR(10)
 DETERMINISTIC
 BEGIN
@@ -18,7 +18,7 @@ BEGIN
 	RETURN id_client;
 END
                         
-ALTER FUNCTION "DBA"."idContact"( )
+CREATE FUNCTION "DBA"."idContact"( )
 RETURNS CHAR(10)
 DETERMINISTIC
 BEGIN
@@ -27,7 +27,7 @@ BEGIN
 	RETURN id_contact;
 END
                     
-ALTER FUNCTION "DBA"."idReservation"( )
+CREATE FUNCTION "DBA"."idReservation"( )
 RETURNS CHAR(15)
 DETERMINISTIC
 BEGIN
@@ -37,7 +37,7 @@ BEGIN
 	RETURN id_reservation;
 END
                            
-ALTER FUNCTION "DBA"."idReservationRestaurant"( )
+CREATE FUNCTION "DBA"."idReservationRestaurant"( )
 RETURNS CHAR(15)
 DETERMINISTIC
 BEGIN
