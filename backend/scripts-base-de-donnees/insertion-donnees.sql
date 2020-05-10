@@ -20,3 +20,18 @@ VALUES
     ('Acti18','Soirée dansante', 30 , 6, 'Divertissement', 'Samedi', '20h00 à 00h00','A4'),
     ('Acti19','Match de Waterpolo', 10 , 5, 'Sport', 'Dimanche', '10h00 à 12h00','A3'),
     ('Acti20','Atelier peinture', 5, 6, 'Divertissement', 'Dimanche', '15h00 à 17h00','A4');
+
+INSERT INTO AGENTS 
+VALUES 
+('A1','Dupont','Marcel','Receptionniste'),
+('A2','Blervaque','Aurélie','Receptionniste'),
+('A3','Brutus','Jimmy','Animateur'),
+('A4','Duchateau','Philippe','Animateur'),
+('A5','Montignie','Bernard','Cuisinier'),
+('A6','Loupinou','Gerard','Cuisinier'),
+('A7','Merino','Paul','Serveur'),
+('A8','Crymo','Roland','Serveur');
+
+
+
+
