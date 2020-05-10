@@ -9,7 +9,7 @@
 **Aspects implémentés :**\
 backend : Une base de données permettant de mémoriser les données de réservation encodé par le client.\
 backend : Un serveur web capable de fournir les pages html, js, css, ainsi que de proposer des webservices\
-backend : Des webservices (avec les procédures associées) :\
+backend : Des webservices (avec les procédures associées) :
 - Un webservice qui renvoie qui charge la description des chambres depuis la depuis la base de donnée. (KOUVAHE)\
 - Un webservice qui permet d'inserer les données dans la table client  après soumission du formulaire réservation. (BLERVAQUE)\
 - Un webservice permettant de renvoyer une liste d'activitées proposées par l'hôtel selon le jour de la semaine et le type d'activitée.\
