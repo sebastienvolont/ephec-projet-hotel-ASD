@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activitées</title>
+    <link href="css/Activitees.css" rel="stylesheet">
+    <script src="js/Activitees.js"></script>
+</head>
+<h1>ACTIVITÉES</h1>
+<body>
+
+<nav class="pages">
+    <h2><a href="http://localhost/page?url=Accueil" ><img src="https://img.icons8.com/ios-filled/50/000000/home.png" height="20px"> Accueil</a>  <!--Onglets de navagation-->
+        <a href="http://localhost/page?url=Chambres"><img src="https://img.icons8.com/ios-filled/50/000000/bed.png" height="20px"> Chambres</a>
+        <a href="http://localhost/page?url=Reservation"><img src="https://img.icons8.com/metro/26/000000/literature.png" height="20px"> Réservation</a>
+        <a href="http://localhost/page?url=Activitees"> Activitées </a>
+    </h2>
+</nav>
+
+<form id="formActivitees">
+    Jour de la semaine :
+<select name="jour">
+    <option>Lundi</option>
+    <option>Mardi</option>
+    <option>Mercredi</option>
+    <option>Jeudi</option>
+    <option>Vendredi</option>²
+    <option>Samedi</option>
+    <option>Dimanche</option>
+</select>
+<label for="typeActivitee">Type de l'activitée</label>
+    <select id="typeActivitee">
+        <option>Divertissement</option>
+        <option>Sport</option>
+</select> <br><br>
+
+<input type="submit" value="Afficher les activitées" id="afficherResultats">
+</form>  <br> <br>
+
+<div id="affichage">
+    <section id="affichageActivitees"></section>
+
+
+</div>
+</body>
+</html>
