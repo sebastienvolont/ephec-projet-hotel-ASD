@@ -15,7 +15,7 @@ body {
 
 }
 
-input[type=text], input[type=email], select, textarea {
+input[type=text], input[type=email], select, textarea, [type=date] {
     width: 60%;
     padding: 15px;
     border: 2px solid #ccc;
@@ -81,26 +81,8 @@ h2 {
 
 }
 
-.photosChambres .decriChambre{
-    overflow: auto;
-}
-
-
-.photosChambres .bloc1{
-    width: 60%;
-    float: left;
-}
-
-.photosChambres .bloc2{
-    overflow: auto;
-}
-
-.photosChambres label{
-    color: #4682B4;
-    font-size: 30px;
-}
 
 #ongletReservation label { display:inline-block; width:50em; }
 
-#ongletReservation input,textarea { display:inline-block; }
+#ongletReservation input { display:inline-block; }
 
