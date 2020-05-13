@@ -1,5 +1,5 @@
 
-/*--------------------------------------------------------------Fonctions------------------------------------------------------------*/
+
 
 CREATE FUNCTION "getPath"()
 returns long varchar
@@ -16,7 +16,7 @@ BEGIN
 END;
 
 
-/*------------------------------------------------------------PROCEDURES-----------------------------------------------------------*/
+
                                                  
 CREATE PROCEDURE "http_getPage" (in url char(255))
 BEGIN
@@ -46,7 +46,7 @@ BEGIN
   select xp_read_file(dba.getPath() || 'img\' || url);
 END;
 
-/*--------------------------------------------------------------Webservices--------------------------------------------------------*/
+
 
 CREATE SERVICE "page" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call dba.http_getPage(:url);
 
