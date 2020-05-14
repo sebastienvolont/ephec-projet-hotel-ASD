@@ -23,4 +23,6 @@ frontend : Une page web (html, js, css) permettant d'appeler les webservices et 
 -Encoder ses informations (nom, prénom, nombre de personne, date)\
 -Permettant de voyager sur différente page du site (Accueil, réservation, Chambres, Contact...)\
 
-<img src="frontend/img/diagrammeDBHotel.png">
+
+![diagrammeDBHotel](https://user-images.githubusercontent.com/64020075/81912192-88d9d400-95ce-11ea-9187-c51b6d4b1e9b.png)
+
