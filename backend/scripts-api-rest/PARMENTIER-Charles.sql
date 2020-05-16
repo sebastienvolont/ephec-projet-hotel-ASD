@@ -1,42 +1,3 @@
-CREATE TABLE "DBA"."RESTAURATION" (
-	"idRestauration" CHAR(10) NOT NULL,
-	"nomReservation" CHAR(20) NOT NULL,
-	"nbrePerso" INTEGER NOT NULL,
-	"dateResto" DATE NOT NULL,
-	"chambreId" CHAR(10) NULL,
-	PRIMARY KEY ( "idRestauration" ASC )
-) IN "system";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ALTER TABLE "DBA"."RESTAURATION"
- ADD CONSTRAINT "CHAMBRES" FOREIGN KEY ( "chambreId" ASC ) REFERENCES "DBA"."CHAMBRES" ( "chambreId" );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ALTER PROCEDURE "DBA"."insertRestaurantReservation"( IN nomResa CHAR(20),
                                                      IN nbPersonnes INTEGER,
                                                      IN dateCheck DATE,
@@ -60,23 +21,7 @@ BEGIN
 END
 
 
-
-
-
-
-
-
-
-
-
 CREATE SERVICE "restaurant" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call insertRestaurantReservation(:nomResa,:nbPersonnes,:dateCheck,:numeroChambre);
-
-
-
-
-
-
-
 
 
 
