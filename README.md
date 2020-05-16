@@ -29,7 +29,7 @@ frontend : Une page web (html, js, css) permettant d'appeler les webservices et 
 /* Création des tables */
 
 	/*Table CLIENT : enregistre les clients venants à l'hotel*/
-CREATE TABLE "client" (
+CREATE TABLE "client" (\
 	"id" //Identifiant de la table ; clé autoincrémentée,\
 	"nomClient" //Nom du client,\
 	"prenomClient" //prénom du client ,\
