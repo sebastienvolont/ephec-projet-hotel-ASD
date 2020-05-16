@@ -70,7 +70,7 @@ CREATE TABLE "CHAMBRES" (\
 		
 		/* Table AGENTS : Enregistre les agents de l'hôtel*/
 CREATE TABLE "AGENTS" (\
-	"IdAgent" //Identifiant de la table Agent\\
+	"IdAgent" //Identifiant de la table Agent,\
 	"nomAgent" //Nom de l'agent,\
 	"prenomAgent" //Prénom de l'agent,\
 	"posteAgent" //Poste de l'agent,\
