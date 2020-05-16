@@ -23,7 +23,6 @@ input[type=text], input[type=email], select, [type=date] {
     box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 15px;
-    resize: vertical;
 
 }
 
@@ -50,6 +49,10 @@ h2 {
     text-align:center;
 }
 
+
+#modifButton {
+    float : left;
+}
 
 
 #ongletReservation label { display:inline-block; width:50em; }
