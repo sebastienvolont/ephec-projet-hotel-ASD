@@ -23,13 +23,13 @@ frontend : Une page web (html, js, css) permettant d'appeler les webservices et 
 -Encoder ses informations (nom, prénom, nombre de personne, date)\
 -Permettant de voyager sur différente page du site (Accueil, réservation, Chambres, Contact...)\
 
-**Détails DB (Diagramme, Tables et Champs**\
+**Détails DB (Diagramme, Tables et Champs)**\
 <img src="frontend/img/diagramme DB hotel projet.png">
 
 /* Création des tables */
 
 	/*Table CLIENT : enregistre les clients venants à l'hotel*/
-CREATE TABLE "DBA"."client" (\
+CREATE TABLE "client" (\
 	"id" //Identifiant de la table ; clé autoincrémentée,\
 	"nomClient" //Nom du client,\
 	"prenomClient" //prénom du client ,\
@@ -39,19 +39,19 @@ CREATE TABLE "DBA"."client" (\
 		
 		/* Table RESERVATION: Enregistre les réservation de la chambre client*/
 
-CREATE TABLE "DBA"."reservations" (\
+CREATE TABLE "reservations" (\
 	"idReservation" //Identifiant de la table reservations,\
 	"dateDebut" //Date du début séjour,\
 	"dateFin" //Date de fin séjour,\
 	"prix" // Prix de la chambre,\
-	"idClient" //Client associéà la reservation; clé étrangère dans cette table,\
+	"idClient" //Client associé à la reservation; clé étrangère dans cette table,\
 	"idChambre" //Chambre associée à la reservation;clé étrangère dans cette table,\
 	"IdAgent" /Agent associé àune reservation; clé étrangère dans cette table,\
 	)
 
 		/* Table RESTAURATION : Enregistre les restaurations de l'hôtel */
 		
-CREATE TABLE "DBA"."RESTAURATION" (\
+CREATE TABLE "RESTAURATION" (\
 	"idRestauration" //Identifiant de la table restauration,\
 	"nomReservation" //Nom de la restauration restauration,\
 	"nbrePerso" //Nombre de personne,\
@@ -68,7 +68,7 @@ CREATE TABLE CHAMBRES (\
 	)\
 		/* Table AGENTS*/
 		
-CREATE TABLE "DBA"."AGENTS : Enregistre les agents de l'hôtel" (\
+CREATE TABLE "AGENTS : Enregistre les agents de l'hôtel" (\
 	"IdAgent" //Identifiant de la table Agent\\
 	"nomAgent" //Nom de l'agent,\
 	"prenomAgent" //Prénom de l'agent,\
@@ -76,7 +76,7 @@ CREATE TABLE "DBA"."AGENTS : Enregistre les agents de l'hôtel" (\
 	)
 	
 		/* Table ACTIVITES*/
-CREATE TABLE "DBA"."ACTIVITEES" (\
+CREATE TABLE "ACTIVITEES" (\
 	"idActivitee" //Identifiant de la table,\
 	"nomActivitee" //Nom de l'activité,\
 	"nbrPersonne" // Nombre de participant maximum\
