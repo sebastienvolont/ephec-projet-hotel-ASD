@@ -23,7 +23,7 @@ frontend : Une page web (html, js, css) permettant d'appeler les webservices et 
 -Encoder ses informations (nom, prénom, nombre de personne, date)\
 -Permettant de voyager sur différente page du site (Accueil, réservation, Chambres, Contact...)\
 
-**Détails DB (Diagramme, Tables et Champs)**\
+**Détails de la DB (Diagramme, Tables et Champs)**\
 <img src="frontend/img/diagramme DB hotel projet.png">
 
 /* Création des tables */
