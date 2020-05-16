@@ -57,7 +57,7 @@ CREATE TABLE "RESTAURATION" (\
 	"nbrePerso" //Nombre de personne,\
 	"dateResto" //Date de la restauration restauration,\
 	"chambreId" // chambre associée à la reservation du restaurant; clé étrangère dans cette table,\
-	)\
+	)
 	
 		/* Table CHAMBRES : Enregistre les chambres */
 CREATE TABLE "CHAMBRES" (\
@@ -66,7 +66,7 @@ CREATE TABLE "CHAMBRES" (\
 	"prixChambreParNuit" //Prix nuitée,\
 	"nbreLit" //Nombre de lit possible,\
 	"Description" //Description de la chambre,\
-	)\
+	)
 		
 		/* Table AGENTS : Enregistre les agents de l'hôtel*/
 CREATE TABLE "AGENTS" (\
@@ -86,4 +86,4 @@ CREATE TABLE "ACTIVITEES" (\
 	"jourSemaine" // Jour d'ouverture,\
 	"horaires" CHAR(30) //Horaire de l'activité\
 	"idAgent" // Agent s'occupant de l'activité: clé étrangère dans cette table,\
-	)\
+	)
