@@ -58,6 +58,7 @@ CREATE TABLE "RESTAURATION" (\
 	"dateResto" //Date de la restauration restauration,\
 	"chambreId" // chambre associée à la reservation du restaurant; clé étrangère dans cette table,\
 	)\
+	
 		/* Table CHAMBRES : Enregistre les chambres */
 CREATE TABLE CHAMBRES (\
 	"chambreId" //Identifiant de la table Chambre,\
@@ -66,8 +67,8 @@ CREATE TABLE CHAMBRES (\
 	"nbreLit" //Nombre de lit possible,\
 	"Description" //Description de la chambre,\
 	)\
-		/* Table AGENTS*/
 		
+		/* Table AGENTS*/
 CREATE TABLE "AGENTS : Enregistre les agents de l'hôtel" (\
 	"IdAgent" //Identifiant de la table Agent\\
 	"nomAgent" //Nom de l'agent,\
