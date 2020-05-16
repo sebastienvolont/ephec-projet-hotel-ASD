@@ -1,4 +1,5 @@
-INSERT INTO AGENTS VALUES(IdAgent, nomAgent, prenomAgent, posteAgent)
+INSERT INTO AGENTS(IdAgent, nomAgent, prenomAgent, posteAgent)
+VALUES
 ('A1','Dupont','Marcel','Receptionniste'),
 ('A2','Blervaque','Aurélie','Receptionniste'),
 ('A3','Brutus','Jimmy','Animateur'),
@@ -32,7 +33,8 @@ VALUES
     ('Acti20','Atelier peinture', 5, 6, 'Divertissement', 'Dimanche', '15h00 à 17h00','A4');
     
     
- INSERT INTO CHAMBRES VALUES (chambreId, nomChambre, prixChambreParNuit, nbreLit, Description)
+ INSERT INTO CHAMBRES (chambreId, nomChambre, prixChambreParNuit, nbreLit, Description)
+ VALUES
     ('ch_01', 'Chambre Double', 100, 2,'Chambre standard moderne prévue de toutes les facilités d''un 4 étoiles. 
      Comprend un lit double, une salle de douche et un balcon. 
      Elles sont également plus spacieuse' ),
@@ -45,7 +47,7 @@ VALUES
       Cette suite de luxe contient un salon, une salle de bain comprenant baignoire et douche, ainsi qu’un lit King size haut de gamme.
       Idéale pour un séjour dans le confort et le luxe'),
 
-     ('ch_04', 'Chambre Economique', 25, 1,'Une chambre standard moderne, lit simple et salle de douche' ),
+    ('ch_04', 'Chambre Economique', 25, 1,'Une chambre standard moderne, lit simple et salle de douche' ),
 
-     ('ch_05', 'Chambre Simple', 50, 1,'Chambre standard moderne prévue de toutes les facilités d''un 4 étoiles.
+    ('ch_05', 'Chambre Simple', 50, 1,'Chambre standard moderne prévue de toutes les facilités d''un 4 étoiles.
                      Comprend un lit simple, une salle de douche et un petit balcon');
