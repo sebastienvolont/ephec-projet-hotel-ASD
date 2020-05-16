@@ -23,4 +23,66 @@ frontend : Une page web (html, js, css) permettant d'appeler les webservices et 
 -Encoder ses informations (nom, prénom, nombre de personne, date)\
 -Permettant de voyager sur différente page du site (Accueil, réservation, Chambres, Contact...)\
 
+**Détails DB (Diagramme, Tables et Champs**\
 <img src="frontend/img/diagramme DB hotel projet.png">
+
+/* Création des tables */
+
+	/*Table CLIENT : enregistre les clients venants à l'hotel*/
+CREATE TABLE "DBA"."client" (
+	"id" //Identifiant de la table ; clé autoincrémentée,
+	"nomClient" //Nom du client,
+	"prenomClient" //prénom du client ,
+	"clientDateNaissance" //Date de naissance du client,
+	"mailClient" //Clé unique enrigistrant le mail du client,	
+) 
+		
+		/* Table RESERVATION: Enregistre les réservation de la chambre client*/
+
+CREATE TABLE "DBA"."reservations" (
+	"idReservation" //Identifiant de la table reservations,
+	"dateDebut" //Date du début séjour,
+	"dateFin" //Date de fin séjour,
+	"prix" // Prix de la chambre,
+	"idClient" //Client associéà la reservation; clé étrangère dans cette table,
+	"idChambre" //Chambre associée à la reservation;clé étrangère dans cette table,
+	"IdAgent" /Agent associé àune reservation; clé étrangère dans cette table,
+	)
+
+		/* Table RESTAURATION : Enregistre les restaurations de l'hôtel */
+		
+CREATE TABLE "DBA"."RESTAURATION" (
+	"idRestauration" //Identifiant de la table restauration,
+	"nomReservation" //Nom de la restauration restauration,
+	"nbrePerso" //Nombre de personne,
+	"dateResto" //Date de la restauration restauration,
+	"chambreId" // chambre associée à la reservation du restaurant; clé étrangère dans cette table,
+	)
+		/* Table CHAMBRES : Enregistre les chambres */
+CREATE TABLE CHAMBRES (
+	"chambreId" //Identifiant de la table Chambre,
+	"nomChambre" //Nom de la chambre,
+	"prixChambreParNuit" //Prix nuitée,
+	"nbreLit" //Nombre de lit possible,
+	"Description" //Description de la chambre,
+	)
+		/* Table AGENTS*/
+		
+CREATE TABLE "DBA"."AGENTS : Enregistre les agents de l'hôtel" (
+	"IdAgent" //Identifiant de la table Agent
+	"nomAgent" //Nom de l'agent,
+	"prenomAgent" //Prénom de l'agent,
+	"posteAgent" //Poste de l'agent,
+	)
+	
+		/* Table ACTIVITES*/
+CREATE TABLE "DBA"."ACTIVITEES" (
+	"idActivitee" //Identifiant de la table,
+	"nomActivitee" //Nom de l'activité,
+	"nbrPersonne" // Nombre de participant maximun
+	"prix" //Prix de l'activité,
+	"typeActivitee" //Type d'activité,
+	"jourSemaine" // Jour d'ouverture,
+	"horaires" CHAR(30) //Horaire de l'activité
+	"idAgent" // Agent s'occupant de l'activité: clé étrangère dans cette table,
+	)
