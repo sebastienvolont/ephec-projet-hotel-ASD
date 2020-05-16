@@ -98,36 +98,36 @@ function validationemail(){
 		return false;
 	}
 }
+
 /* Calcul du prix total du séjour*/
 function calculPrixFinal(){
     let dateDebut = form1.dateDebut.value;
     let dateFin = form1.dateFin.value;
     let dateDebutObject = new Date(dateDebut);
     let dateFinObject = new Date(dateFin);
-    let jourNumeroDebut = dateDebutObject.getDate();
-    let jourNumeroFin = dateFinObject.getDate();
-    let nbrJourTotal = (jourNumeroFin - jourNumeroDebut);
+    let differenceDate =  dateFinObject - dateDebutObject;
+    let nbrJourTotal = differenceDate / (1000 * 60 * 60 * 24);
     switch (form1.typeChambre.value) {
 
         case 'ch_04' :
             console.log(25 * nbrJourTotal);
-			return(25 * nbrJourTotal);
+            return(25 * nbrJourTotal);
             break;
         case 'ch_05' :
             console.log(50 * nbrJourTotal);
-			return(50 * nbrJourTotal);
+            return(50 * nbrJourTotal);
             break;
         case 'ch_01' :
             console.log(100 * nbrJourTotal);
-			return(100 * nbrJourTotal);
+            return(100 * nbrJourTotal);
             break;
         case 'ch_02' :
             console.log(200 * nbrJourTotal);
-			return(200 * nbrJourTotal);
+            return(200 * nbrJourTotal);
             break;
         case 'ch_03' :
             console.log(400 * nbrJourTotal);
-			return(400 * nbrJourTotal);
+            return(400 * nbrJourTotal);
             break;
     }
 }
