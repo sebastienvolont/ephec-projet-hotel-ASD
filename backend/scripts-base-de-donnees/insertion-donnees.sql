@@ -9,7 +9,7 @@ VALUES
 ('A7','Merino','Paul','Serveur'),
 ('A8','Crymo','Roland','Serveur');
 
-INSERT INTO ACTIVITEES (idActivitee,nomActivitee, nbrPersonne, prix, typeActivitee, jourSemaine, horaires,idAgent)
+INSERT INTO ACTIVITEES (idActivitee, nomActivitee, nbrPersonne, prix, typeActivitee, jourSemaine, horaires, idAgent)
 VALUES
     ('Acti01','Escalade', 4 , 5, 'Sport', 'Lundi', '08h00 à 9h40','A3'),
     ('Acti02','Visite de la ville', 8 , 20, 'Divertissement', 'Lundi', '10h00 à 14h00','A4'),
