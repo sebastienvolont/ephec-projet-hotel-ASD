@@ -1,4 +1,4 @@
-
+//PARMENTIER CHARLES HE201787
 // Appel la fonction Date minimum
 function initPage(){
     let formResto = document.getElementById("formRestaurant");
