@@ -60,7 +60,7 @@ CREATE TABLE "RESTAURATION" (\
 	)\
 	
 		/* Table CHAMBRES : Enregistre les chambres */
-CREATE TABLE CHAMBRES (\
+CREATE TABLE "CHAMBRES" (\
 	"chambreId" //Identifiant de la table Chambre,\
 	"nomChambre" //Nom de la chambre,\
 	"prixChambreParNuit" //Prix nuitée,\
@@ -68,15 +68,15 @@ CREATE TABLE CHAMBRES (\
 	"Description" //Description de la chambre,\
 	)\
 		
-		/* Table AGENTS*/
-CREATE TABLE "AGENTS : Enregistre les agents de l'hôtel" (\
+		/* Table AGENTS : Enregistre les agents de l'hôtel*/
+CREATE TABLE "AGENTS" (\
 	"IdAgent" //Identifiant de la table Agent\\
 	"nomAgent" //Nom de l'agent,\
 	"prenomAgent" //Prénom de l'agent,\
 	"posteAgent" //Poste de l'agent,\
 	)
 	
-		/* Table ACTIVITES*/
+		/* Table ACTIVITES : Enregistre les activitées proposées par l'hôtel*/
 CREATE TABLE "ACTIVITEES" (\
 	"idActivitee" //Identifiant de la table,\
 	"nomActivitee" //Nom de l'activité,\
