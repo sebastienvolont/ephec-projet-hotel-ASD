@@ -4,7 +4,16 @@
 
 **Classe :** 1TM1
 
-**Description du projet :** Site internet d'un hôtel qui permet de pouvoir réserver des chambres,
+**Description du projet :** Notre projet a pour but:
+- La reservation des chambres via le site de l'hôtel
+Grâce à un formulaire de reservation sur le site de l'hôtel le client soummet une reservation.\
+Après soumission de la reservation il y a une vérification dans la base de données qui vérifie si le client existe ou non. \
+S'il n'existe pas un numéro client lui est attribué et grâce aux données recupérées sur le formulaire ces données sont créés.\ 
+Afin de s'assurer de l'unicité de l'id du client le numéro du client se crée après la test du nom, prénom et date de naissance.\
+Il est a noté. Après la création du client la réseravtion était aussi enregistrée dans la base de donnée qu'un client ne peut avoir 2\ adresses mails différentes.
+- La reservation pour le restaurants pour les clients ou non de l'hôtel
+
+- La gestion des activités qui sont organisées à l'hôtel
 
 **Aspects implémentés :**\
 backend : Une base de données permettant de mémoriser les données de réservation encodé par le client.\
