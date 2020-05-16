@@ -34,7 +34,7 @@ CREATE TABLE "client" (\
 	"nomClient" //Nom du client,\
 	"prenomClient" //prénom du client ,\
 	"clientDateNaissance" //Date de naissance du client,\
-	"mailClient" //Clé unique enrigistrant le mail du client,\	
+	"mailClient" //Clé unique enrigistrant le mail du client\	
 ) 
 		
 		/* Table RESERVATION: Enregistre les réservation de la chambre client*/
@@ -46,7 +46,7 @@ CREATE TABLE "reservations" (\
 	"prix" // Prix de la chambre,\
 	"idClient" //Client associé à la reservation; clé étrangère dans cette table,\
 	"idChambre" //Chambre associée à la reservation;clé étrangère dans cette table,\
-	"IdAgent" /Agent associé àune reservation; clé étrangère dans cette table,\
+	"IdAgent" /Agent associé àune reservation; clé étrangère dans cette table\
 	)
 
 		/* Table RESTAURATION : Enregistre les restaurations de l'hôtel */
@@ -56,7 +56,7 @@ CREATE TABLE "RESTAURATION" (\
 	"nomReservation" //Nom de la restauration restauration,\
 	"nbrePerso" //Nombre de personne,\
 	"dateResto" //Date de la restauration restauration,\
-	"chambreId" // chambre associée à la reservation du restaurant; clé étrangère dans cette table,\
+	"chambreId" // chambre associée à la reservation du restaurant; clé étrangère dans cette table\
 	)
 	
 		/* Table CHAMBRES : Enregistre les chambres */
@@ -65,7 +65,7 @@ CREATE TABLE "CHAMBRES" (\
 	"nomChambre" //Nom de la chambre,\
 	"prixChambreParNuit" //Prix nuitée,\
 	"nbreLit" //Nombre de lit possible,\
-	"Description" //Description de la chambre,\
+	"Description" //Description de la chambre\
 	)
 		
 		/* Table AGENTS : Enregistre les agents de l'hôtel*/
@@ -73,17 +73,17 @@ CREATE TABLE "AGENTS" (\
 	"IdAgent" //Identifiant de la table Agent,\
 	"nomAgent" //Nom de l'agent,\
 	"prenomAgent" //Prénom de l'agent,\
-	"posteAgent" //Poste de l'agent,\
+	"posteAgent" //Poste de l'agent\
 	)
 	
 		/* Table ACTIVITES : Enregistre les activitées proposées par l'hôtel*/
 CREATE TABLE "ACTIVITEES" (\
 	"idActivitee" //Identifiant de la table,\
 	"nomActivitee" //Nom de l'activité,\
-	"nbrPersonne" // Nombre de participant maximum\
+	"nbrPersonne" // Nombre de participant maximum,\
 	"prix" //Prix de l'activité,\
 	"typeActivitee" //Type d'activité,\
 	"jourSemaine" // Jour d'ouverture,\
-	"horaires" CHAR(30) //Horaire de l'activité\
-	"idAgent" // Agent s'occupant de l'activité: clé étrangère dans cette table,\
+	"horaires" CHAR(30) //Horaire de l'activité,\
+	"idAgent" // Agent s'occupant de l'activité: clé étrangère dans cette table\
 	)
