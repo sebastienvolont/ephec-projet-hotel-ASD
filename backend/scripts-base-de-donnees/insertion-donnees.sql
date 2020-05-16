@@ -1,4 +1,4 @@
-INSERT INTO AGENTS VALUES 
+INSERT INTO AGENTS VALUES(IdAgent, nomAgent, prenomAgent, posteAgent)
 ('A1','Dupont','Marcel','Receptionniste'),
 ('A2','Blervaque','Aurélie','Receptionniste'),
 ('A3','Brutus','Jimmy','Animateur'),
@@ -31,20 +31,21 @@ VALUES
     ('Acti19','Match de Waterpolo', 10 , 5, 'Sport', 'Dimanche', '10h00 à 12h00','A3'),
     ('Acti20','Atelier peinture', 5, 6, 'Divertissement', 'Dimanche', '15h00 à 17h00','A4');
     
-    INSERT INTO CHAMBRES VALUES 
-                    ('ch_01', 'Chambre Double', 100, 2,'Chambre standard moderne prévue de toutes les facilités d''un 4 étoiles. 
-                    Comprend un lit double, une salle de douche et un balcon. 
-                    Elles sont également plus spacieuse' ),
+    
+ INSERT INTO CHAMBRES VALUES (chambreId, nomChambre, prixChambreParNuit, nbreLit, Description)
+    ('ch_01', 'Chambre Double', 100, 2,'Chambre standard moderne prévue de toutes les facilités d''un 4 étoiles. 
+     Comprend un lit double, une salle de douche et un balcon. 
+     Elles sont également plus spacieuse' ),
 
-		    ('ch_02', 'Chambre Familial', 200, 5,'Chambre plus spacieuse contenant 2 lits double ainsi qu’un petit espace salon avec TV, possibilité de transformer le canapé en lit permettant d’accueillir une 5ème personne.
-                    Cette chambre est idéale pour les familles avec enfants'),
+    ('ch_02', 'Chambre Familial', 200, 5,'Chambre plus spacieuse contenant 2 lits double ainsi qu’un petit espace salon avec TV, possibilité de transformer le canapé en lit permettant d’accueillir une 5ème personne.
+     Cette chambre est idéale pour les familles avec enfants'),
 
-	   	    ('ch_03', 'Suite de Luxe', 400, 3,'La suite de luxe est la plus grande chambre de l’hôtel. 
-                    Située au dernier étage elle surplombe tout le complexe offrant une vue splendide depuis sa magnifique terrasse. 
-                    Cette suite de luxe contient un salon, une salle de bain comprenant baignoire et douche, ainsi qu’un lit King size haut de gamme.
-                    Idéale pour un séjour dans le confort et le luxe'),
+    ('ch_03', 'Suite de Luxe', 400, 3,'La suite de luxe est la plus grande chambre de l’hôtel. 
+      Située au dernier étage elle surplombe tout le complexe offrant une vue splendide depuis sa magnifique terrasse. 
+      Cette suite de luxe contient un salon, une salle de bain comprenant baignoire et douche, ainsi qu’un lit King size haut de gamme.
+      Idéale pour un séjour dans le confort et le luxe'),
 
-		    ('ch_04', 'Chambre Economique', 25, 1,'Une chambre standard moderne, lit simple et salle de douche' ),
+     ('ch_04', 'Chambre Economique', 25, 1,'Une chambre standard moderne, lit simple et salle de douche' ),
 
-	             ('ch_05', 'Chambre Simple', 50, 1,'Chambre standard moderne prévue de toutes les facilités d''un 4 étoiles.
+     ('ch_05', 'Chambre Simple', 50, 1,'Chambre standard moderne prévue de toutes les facilités d''un 4 étoiles.
                      Comprend un lit simple, une salle de douche et un petit balcon');
