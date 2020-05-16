@@ -1,4 +1,4 @@
-"use strict";
+/* <Insertion du client */
 function client(){
 	event.preventDefault();
 	if(!validationemail()){
@@ -18,7 +18,7 @@ function client(){
 				xhr.open('GET','http://localhost/getClient?lenom=' + form1.name.value +'&leprenom=' + form1.firstName.value+ '&dteNaiss='+ form1.dateNaiss.value+ '&lemail=' + form1.emailClient.value,true);
 				xhr.onload=function titi(){
 					let reponse = JSON.stringify(xhr.responseText);
-					if(xhr.readyState == 4 && xhr.status == 200){ 
+					if(xhr.readyState == 4 && xhr.status == 200){
 						getidClient();
 					}
 				}
@@ -28,7 +28,7 @@ function client(){
 		}
 	}
 }
-
+/*Insertion de la reservation*/
 function reservation(idClient){
 	console.log(idClient);
 	event.preventDefault();
@@ -41,7 +41,7 @@ function reservation(idClient){
 	console.log("fonction reservation fait");
 	document.getElementById("zoneT").innerHTML = "<p>Votre chambre à bien été reserver pour la date du " + form1.dateDebut.value + " jusqu'au " + form1.dateFin.value + " Vous devrez payer sur place " + calculPrixFinal() + " Euros"
 }
-
+/*Teste l'unicité du client en testant le nom prénom et date de naissance*/
 function getidClient(){
 	event.preventDefault();
 	let xhr = new XMLHttpRequest();
@@ -56,7 +56,7 @@ function getidClient(){
 	xhr.send();
 	console.log("getidClient");
 }
-
+/* Relie le chambre au prix choisi*/
 function initPage(){
 	let xhr = new XMLHttpRequest();
 	xhr.open('GET','http://localhost/getListeChambre',true);
@@ -69,14 +69,14 @@ function initPage(){
 	console.log('fait');
 }
 
-
+/*Validation de la date de fin du séjour*/
 function checkDateFin(){
     if(form1.dateFin.value <= form1.dateDebut.value){
         alert("La date de fin séjour ne peut être inférieure à la date du début");
 		return false;
     }
 }
-
+/*Validation de la date de naissance*/
 function checkBirthDate(){
 let dateSaisie = document.getElementById("dateNaiss").value;
 let dateSaisieObject = new Date(dateSaisie);
@@ -88,7 +88,7 @@ if((today - saisieYear) < 18) {
     }
 }
 
-
+/*Validation du mail*/
 function validationemail(){
 	let expressionReguliere = /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
 	if (expressionReguliere.test(form1.emailClient.value)){	
@@ -98,7 +98,7 @@ function validationemail(){
 		return false;
 	}
 }
-
+/* Calcul du prix total du séjour*/
 function calculPrixFinal(){
     let dateDebut = form1.dateDebut.value;
     let dateFin = form1.dateFin.value;
@@ -167,4 +167,27 @@ function  affichage(data) {
 		if(d==4) {document.getElementById("photo1").innerHTML = str;}
 	}
 str +="</table>";
+}
+
+/*Recherche reservation*/
+
+function pageLoad() {
+	let xhr = new XMLHttpRequest();
+	let valeur = document.getElementById("saisie").value;
+	xhr.open("GET","http://localhost/http_searchClient?email="+valeur,true);
+	xhr.onload = function  newPage() {
+		console.log(JSON.parse(xhr.responseText));
+		affiche(JSON.parse(xhr.responseText));
+		console.log("La page doit se charger");
+	}
+	xhr.send();
+}
+
+function affiche(data) {
+	for(let d in data)
+	{
+		document.getElementById("name").value = data[d].nomClient;
+		document.getElementById("firstName").value = data[d].prenomClient;
+		document.getElementById("dateNaiss").value = data[d].clientDateNaissance;
+	}
 }
