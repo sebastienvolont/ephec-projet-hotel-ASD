@@ -44,7 +44,7 @@ CREATE SERVICE "getActivitees" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON M
 -- Paramètre reçu pour la recherche jour et typeActivité --\
 -- Le réponse de la procédure renvoie un type JSON  --\		
 
-   **- BLERVAQUE Thomas**\\
+   **- BLERVAQUE Thomas**\
 CREATE SERVICE "getReservation" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call sp_getReservation(:ladateDeb,:ladateFin,:leprixTotal,:clientId,:lidchambre);\
 -- Permet d'inserrer les données dans la table de reservation dans la base de données --\
 -- Paramètre reçu pour la requête date début, date fin, prix chambre, Id du client, Id de la chambre --\
