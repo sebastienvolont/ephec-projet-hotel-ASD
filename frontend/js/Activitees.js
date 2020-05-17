@@ -1,3 +1,6 @@
+//HE201833 VOLONT Sébastien
+
+
 // Charge les options du select
 window.onload=function() {
     document.getElementById("afficherResultats").click();
