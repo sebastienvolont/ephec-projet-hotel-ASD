@@ -10,14 +10,11 @@ BEGIN
     
 
     INSERT INTO RESTAURATION (idRestauration, nomReservation, nbrePerso, dateResto, chambreId)
- values ((SELECT idReservationRestaurant()), -- Id Reservation
-                                            nomResa,
-                                            nbPersonnes,
-                                           dateCheck,
-                                            idChambre 
-                                             
-                                           
-    );
+ 	values ((SELECT idReservationRestaurant()), 
+                nomResa,
+                nbPersonnes,
+                dateCheck,
+                idChambre );
 END
 
 
