@@ -82,10 +82,7 @@ CREATE SERVICE "http_searchClient" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL 
 CREATE SERVICE "descriptionChambre" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call descriptionChambres();\
 -- Permet d'insérer les données dans la table Chambre  --\
 -- Paramètre reçu pour la requête: aucun --\
--- Le réponse de la procédure renvoie un type JSON  --
-
-
-
+-- Le réponse de la procédure renvoie un type JSON  --\
 
 
 **Détails de la DB (Diagramme, Tables et Champs) : **\
