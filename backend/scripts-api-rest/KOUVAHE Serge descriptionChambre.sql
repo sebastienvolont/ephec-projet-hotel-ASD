@@ -1,7 +1,7 @@
 -- -KOUVAHE Folly Serge  HE201817--
 
 -- Procedure qui charge le contenu de la  page web  chambre depuis  de la base de données --
-ALTER PROCEDURE descriptionChambres()
+CREATE PROCEDURE descriptionChambres()
  RESULT( detailChambre CHAR(500),nombreLit INTEGER, prixChambre INTEGER)
 BEGIN
     CALL sa_set_http_header('Access-Control-Allow-Origin','*');
