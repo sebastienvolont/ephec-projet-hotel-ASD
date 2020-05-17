@@ -38,11 +38,12 @@ frontend : Une page web (html, js, css) permettant d'appeler les webservices et 
 
 **Détail api rest**\
 
-   **- VOLONT Sébastien**\\
+   **- VOLONT Sébastien**\
 CREATE SERVICE "getActivitees" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call proc_getActivitee(:jour,:typeActi);
 -- Permet d'afficher les resultats de la recherche en fonction du jour et du type d'activité --\
 -- Paramètre reçu pour la recherche jour et typeActivité --\
 -- Le réponse de la procédure renvoie un type JSON  --\		
+
    **- BLERVAQUE Thomas**\\
 CREATE SERVICE "getReservation" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call sp_getReservation(:ladateDeb,:ladateFin,:leprixTotal,:clientId,:lidchambre);\
 -- Permet d'inserrer les données dans la table de reservation dans la base de données --\
