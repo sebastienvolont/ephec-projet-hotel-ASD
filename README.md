@@ -11,15 +11,19 @@ Après soumission de la reservation il y a une vérification dans la base de don
 S'il n'existe pas un numéro client lui est attribué et grâce aux données recupérées sur le formulaire ces données sont créés.
 Afin de s'assurer de l'unicité de l'id du client le numéro du client se crée après la test du nom, prénom et date de naissance.\
 Il est a noté. Après la création du client la réseravtion était aussi enregistrée dans la base de donnée qu'un client ne peut avoir 2 adresses mails différentes.
+
 - La reservation pour le restaurants pour les clients ou non de l'hôtel
+Un formulaire de reservation restaurant nous permet de reserver pour une date donnée des tables du restaurant. Il est a noté que les client ne séjournant pas à l'hôtel peuvent aussi faire des reservations.
 
 - La gestion des activités qui sont organisées à l'hôtel
+Grâce à un formulaire inter active le client par ses choix peut voir de manière instantané le résultat de ses recherches.
 
 **Aspects implémentés :**\
-backend : Une base de données permettant de mémoriser les données de réservation encodé par le client.\
+backend : Une base de données permettant de mémoriser les données de réservation chambre et restautant encodé par le client.\
+Une base de donnée qui permet de faire des recherches sur les activités proposées par l'hôtel.
 backend : Un serveur web capable de fournir les pages html, js, css, ainsi que de proposer des webservices\
 backend : Des webservices (avec les procédures associées) :
-- Un webservice qui renvoie qui charge la description des chambres depuis la depuis la base de donnée. (KOUVAHE)\
+- Un webservice qui charge la description des chambres depuis la depuis la base de donnée et la mise à jours des données clients. (KOUVAHE)\
 - Un webservice qui permet d'inserer les données dans la table client  après soumission du formulaire réservation. (BLERVAQUE)\
 - Un webservice permettant de renvoyer une liste d'activitées proposées par l'hôtel selon le jour de la semaine et le type d'activitée.\
 (VOLONT)
@@ -28,7 +32,7 @@ backend : Des webservices (avec les procédures associées) :
 
 frontend : Une page web (html, js, css) permettant d'appeler les webservices et de traiter les réponses, qui propose une interface utilisateur pour:\
 -Réserver sa chambre\
-- Réserver une table au restaurant\
+-Réserver une table au restaurant\
 -Encoder ses informations (nom, prénom, nombre de personne, date)\
 -Permettant de voyager sur différente page du site (Accueil, réservation, Chambres, Contact...)\
 
