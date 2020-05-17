@@ -5,8 +5,6 @@
 "use strict";
 function client(){
 	event.preventDefault();
-	checkNom();
-	checkPrenom();
 	if(!validationemail()){
 		alert("Adresse email invalide.");
 	}
