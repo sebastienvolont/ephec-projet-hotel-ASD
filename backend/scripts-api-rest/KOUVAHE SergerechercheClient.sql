@@ -2,7 +2,7 @@
 
  --Procédure qui fait la recherche du client à base de son mail  --
 
-ALTER PROCEDURE "DBA"."searchClient"( IN email CHAR (30) )
+ALTER PROCEDURE searchClient( IN email CHAR (30) )
     RESULT(idclt INTEGER , nomClient CHAR (50), prenomClient CHAR (50), clientDateNaissance  DATE, mail CHAR (30))
 BEGIN
 	Call sa_set_http_header('Access-Control-Allow-Origin', '*');
