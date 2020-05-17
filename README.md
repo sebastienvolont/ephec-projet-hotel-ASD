@@ -36,7 +36,7 @@ frontend : Une page web (html, js, css) permettant d'appeler les webservices et 
 -Encoder ses informations (nom, prénom, nombre de personne, date)
 -Permettant de voyager sur différente page du site (Accueil, réservation, Chambres, Contact...)
 
-**Détail api rest**\
+**Détail api rest**
 
    **- VOLONT Sébastien**\
 CREATE SERVICE "getActivitees" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call proc_getActivitee(:jour,:typeActi);
