@@ -6,25 +6,25 @@
 
 **Description du projet :** Notre projet a pour but:
 - La reservation des chambres via le site de l'hôtel
-Grâce à un formulaire de reservation sur le site de l'hôtel le client soummet une reservation.\
+Grâce à un formulaire de reservation sur le site de l'hôtel le client soumet une reservation.\
 Après soumission de la reservation il y a une vérification dans la base de données qui vérifie si le client existe ou non. \
 S'il n'existe pas un numéro client lui est attribué et grâce aux données recupérées sur le formulaire ces données sont créés.
 Afin de s'assurer de l'unicité de l'id du client le numéro du client se crée après la test du nom, prénom et date de naissance.\
-Il est a noté. Après la création du client la réseravtion était aussi enregistrée dans la base de donnée qu'un client ne peut avoir 2 adresses mails différentes.
+Il est a noté. Après la création du client la réservation était aussi enregistrée dans la base de donnée qu'un client ne peut avoir 2 adresses mails différentes.
 
-- La reservation pour le restaurants pour les clients ou non de l'hôtel
+- La reservation pour le restaurant pour les clients ou non de l'hôtel
 Un formulaire de reservation restaurant nous permet de reserver pour une date donnée des tables du restaurant. Il est a noté que les client ne séjournant pas à l'hôtel peuvent aussi faire des reservations.
 
 - La gestion des activités qui sont organisées à l'hôtel
-Grâce à un formulaire inter active le client par ses choix peut voir de manière instantané le résultat de ses recherches.
+Grâce à un formulaire interactif le client par ses choix peut voir de manière instantané le résultat de ses recherches.
 
 **Aspects implémentés :**
 backend : Une base de données permettant de mémoriser les données de réservation chambre et restautant encodé par le client.
 Une base de donnée qui permet de faire des recherches sur les activités proposées par l'hôtel.
 backend : Un serveur web capable de fournir les pages html, js, css, ainsi que de proposer des webservices
 backend : Des webservices (avec les procédures associées) :
-- Un webservice qui charge la description des chambres depuis la depuis la base de donnée et la mise à jours des données clients. (KOUVAHE)
-- Un webservice qui permet d'inserer les données dans la table client  après soumission du formulaire réservation. (BLERVAQUE)
+- Un webservice qui charge la description des chambres depuis la depuis la base de données et la mise à jours des données clients. (KOUVAHE)
+- Un webservice qui permet d'insérer les données dans la table client  après soumission du formulaire réservation. (BLERVAQUE)
 - Un webservice permettant de renvoyer une liste d'activitées proposées par l'hôtel selon le jour de la semaine et le type d'activitée.
 (VOLONT)
 - un webservice permettant d'inserer les données dans la table restauration grâce du formulaire de réservation. (PARMENTIER)
@@ -36,17 +36,17 @@ frontend : Une page web (html, js, css) permettant d'appeler les webservices et 
 -Encoder ses informations (nom, prénom, nombre de personne, date)
 -Permettant de voyager sur différente page du site (Accueil, réservation, Chambres, Contact...)
 
-**Détail api rest**
+**Détail api rest :**
 
    **- VOLONT Sébastien**\
 CREATE SERVICE "getActivitees" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call proc_getActivitee(:jour,:typeActi);
 -- Permet d'afficher les resultats de la recherche en fonction du jour et du type d'activité --\
--- Paramètre reçu pour la recherche jour et typeActivité --\
+-- Paramètres reçus pour la recherche selon le jour et du typeActivité --\
 -- Le réponse de la procédure renvoie un type JSON  --\		
 
    **- BLERVAQUE Thomas**\
 CREATE SERVICE "getReservation" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call sp_getReservation(:ladateDeb,:ladateFin,:leprixTotal,:clientId,:lidchambre);\
--- Permet d'inserrer les données dans la table de reservation dans la base de données --\
+-- Permet d'insérer les données dans la table de reservation dans la base de données --\
 -- Paramètre reçu pour la requête date début, date fin, prix chambre, Id du client, Id de la chambre --\
 -- Le réponse de la procédure renvoie un type RAW  --
 
@@ -57,12 +57,12 @@ CREATE SERVICE "getListeChambre" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON 
 
 CREATE SERVICE "getIdClient" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call sp_getIdClient(:lenom,:leprenom,:dteNaiss); \
 -- Sélectionne l'id, le nom et le prix de la chambre dans le champs prix du formulaire  --\
--- Paramètre reçu pour la requête nom, prénom, date de naissance --\
+-- Paramètres reçu pour la requête nom, prénom, date de naissance --\
 -- Le réponse de la procédure renvoie un type JSON  --
 
    **- PARMENTIER Charles**\
 CREATE SERVICE "restaurant" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call insertRestaurantReservation(:nomResa,:nbPersonnes,:dateCheck); \
--- Permet d'inserrer les données dans la table Restauration  --\
+-- Permet d'insérer les données dans la table Restauration  --\
 -- Paramètre reçu pour la requête nom de la reservation, nombre de personne, date de la reservation --\
 -- Le réponse de la procédure renvoie un type RAW  --
 
@@ -80,14 +80,14 @@ CREATE SERVICE "http_searchClient" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL 
 
 
 CREATE SERVICE "descriptionChambre" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call descriptionChambres();\
--- Permet d'inserrer les données dans la table Chambre  --
+-- Permet d'insérer les données dans la table Chambre  --
 -- Paramètre reçu pour la requête: aucun --
 -- Le réponse de la procédure renvoie un type JSON  --
 
 
 
 
-**Détails de la DB (Diagramme, Tables et Champs)**\
+**Détails de la DB (Diagramme, Tables et Champs) : **\
 <img src="frontend/img/diagramme DB hotel projet.png">
 
 /* Création des tables */
@@ -98,7 +98,7 @@ CREATE TABLE "client" (\
 	"nomClient" //Nom du client,\
 	"prenomClient" //prénom du client ,\
 	"clientDateNaissance" //Date de naissance du client,\
-	"mailClient" //Clé unique enrigistrant le mail du client\	
+	"mailClient" //Clé unique enregistrant le mail du client\	
 ) 
 		
 		/* Table RESERVATION: Enregistre les réservation de la chambre client*/
