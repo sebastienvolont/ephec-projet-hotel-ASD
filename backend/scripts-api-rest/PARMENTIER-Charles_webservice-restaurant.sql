@@ -1,4 +1,4 @@
-CREATE PROCEDURE "DBA"."insertRestaurantReservation"( IN nomResa CHAR(20),
+CREATE PROCEDURE "insertRestaurantReservation"( IN nomResa CHAR(20),
                                                      IN nbPersonnes INTEGER,
                                                      IN dateCheck DATE,
                                                      IN idChambre char(10) )
@@ -22,7 +22,7 @@ CREATE SERVICE "restaurant" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHO
 
 
 
-CREATE FUNCTION "DBA"."idReservationRestaurant"( )
+CREATE FUNCTION "idReservationRestaurant"( )
 RETURNS CHAR(15)
 DETERMINISTIC
 BEGIN
