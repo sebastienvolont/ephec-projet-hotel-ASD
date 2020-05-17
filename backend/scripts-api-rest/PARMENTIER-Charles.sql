@@ -1,9 +1,9 @@
-ALTER PROCEDURE "DBA"."insertRestaurantReservation"( IN nomResa CHAR(20),
+CREATE PROCEDURE "DBA"."insertRestaurantReservation"( IN nomResa CHAR(20),
                                                      IN nbPersonnes INTEGER,
                                                      IN dateCheck DATE,
                                                      IN idChambre char(10) )
  
-/* RESULT( nom_colonne type_colonne, ... ) */
+
 BEGIN
     CALL sa_set_http_header('Access-Control-Allow-Origin', '*');
 	CALL sa_set_http_header('Content-Type','text/json');
@@ -25,7 +25,7 @@ CREATE SERVICE "restaurant" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHO
 
 
 
-ALTER FUNCTION "DBA"."idReservationRestaurant"( )
+CREATE FUNCTION "DBA"."idReservationRestaurant"( )
 RETURNS CHAR(15)
 DETERMINISTIC
 BEGIN
