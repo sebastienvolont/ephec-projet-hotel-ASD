@@ -85,7 +85,7 @@ CREATE SERVICE "descriptionChambre" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL
 -- Le réponse de la procédure renvoie un type JSON  --\
 
 
-**Détails de la DB (Diagramme, Tables et Champs) :**\
+**Détails de la DB (Diagramme, Tables et Champs) :**
 
 <img src="frontend/img/diagramme DB hotel projet.png">
 
