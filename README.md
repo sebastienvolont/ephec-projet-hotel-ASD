@@ -37,37 +37,37 @@ frontend : Une page web (html, js, css) permettant d'appeler les webservices et 
 -Permettant de voyager sur différente page du site (Accueil, réservation, Chambres, Contact...)
 
 **Détail api rest**
-   **- VOLONT Sébastien**
+   **- VOLONT Sébastien**\
 CREATE SERVICE "getActivitees" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call proc_getActivitee(:jour,:typeActi);
 -- Permet d'afficher les resultats de la recherche en fonction du jour et du type d'activité --
 -- Paramètre reçu pour la recherche jour et typeActivité --
 -- Le réponse de la procédure renvoie un type JSON  --			
-   **- BLERVAQUE Thomas**
-CREATE SERVICE "getReservation" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call sp_getReservation(:ladateDeb,:ladateFin,:leprixTotal,:clientId,:lidchambre);
--- Permet d'inserrer les données dans la table de reservation dans la base de données --
--- Paramètre reçu pour la requête date début, date fin, prix chambre, Id du client, Id de la chambre --
+   **- BLERVAQUE Thomas**\
+CREATE SERVICE "getReservation" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call sp_getReservation(:ladateDeb,:ladateFin,:leprixTotal,:clientId,:lidchambre);\
+-- Permet d'inserrer les données dans la table de reservation dans la base de données --\
+-- Paramètre reçu pour la requête date début, date fin, prix chambre, Id du client, Id de la chambre --\
 -- Le réponse de la procédure renvoie un type RAW  --
 
-CREATE SERVICE "getListeChambre" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call sp_getListeChambre();
--- Permet d'afficher en le type de chambre, la catégorie et le prix sur le champ prix du formulaire de reservation--
--- Paramètre reçu pour la requête nom, prénom, date de naissance --
--- Le réponse de la procédure renvoie un type RAW  --
+CREATE SERVICE "getListeChambre" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call sp_getListeChambre();\
+-- Permet d'afficher en le type de chambre, la catégorie et le prix sur le champ prix du formulaire de reservation--\
+-- Paramètre reçu pour la requête nom, prénom, date de naissance --\
+-- Le réponse de la procédure renvoie un type RAW  --\
 
-CREATE SERVICE "getIdClient" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call sp_getIdClient(:lenom,:leprenom,:dteNaiss); 
--- Sélectionne l'id, le nom et le prix de la chambre dans le champs prix du formulaire  --
--- Paramètre reçu pour la requête nom, prénom, date de naissance --
--- Le réponse de la procédure renvoie un type JSON  --
+CREATE SERVICE "getIdClient" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call sp_getIdClient(:lenom,:leprenom,:dteNaiss); \
+-- Sélectionne l'id, le nom et le prix de la chambre dans le champs prix du formulaire  --\
+-- Paramètre reçu pour la requête nom, prénom, date de naissance --\
+-- Le réponse de la procédure renvoie un type JSON  --\
 
-   **- PARMENTIER Charles**
+   **- PARMENTIER Charles**\
 CREATE SERVICE "restaurant" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call insertRestaurantReservation(:nomResa,:nbPersonnes,:dateCheck); 
 -- Permet d'inserrer les données dans la table Restauration  --
 -- Paramètre reçu pour la requête nom de la reservation, nombre de personne, date de la reservation --
 -- Le réponse de la procédure renvoie un type RAW  --
 
-   **-KOUVAHE Serge**
-CREATE SERVICE "updateClient" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call updateClient(:idclient,:nom,:prenom,:dateNaiss);
--- Permet de modifier les données dans la table client  --
--- Paramètre reçu pour la requête: nom, prénom, date de naissance  --
+   **-KOUVAHE Serge**\
+CREATE SERVICE "updateClient" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call updateClient(:idclient,:nom,:prenom,:dateNaiss);\
+-- Permet de modifier les données dans la table client  --\
+-- Paramètre reçu pour la requête: nom, prénom, date de naissance  --\
 -- Le réponse de la procédure renvoie un type RAW  --
 
  
