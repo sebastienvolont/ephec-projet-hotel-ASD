@@ -9,3 +9,11 @@ BEGIN
     from ACTIVITEES AS t1 join AGENTS as t2 on t1.IdAgent = t2.IdAgent 
     where jour = jourSemaine and typeActi = typeActivitee
 END
+
+CREATE SERVICE "getActivitees"
+TYPE 'JSON'
+AUTHORIZATION OFF
+USER "DBA" 
+URL ON
+METHODS 'GET'
+AS call proc_getActivitee(:jour,:typeActi);
