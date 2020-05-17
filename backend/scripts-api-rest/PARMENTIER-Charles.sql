@@ -15,7 +15,7 @@ BEGIN
                 nbPersonnes,
                 dateCheck,
                 idChambre );
-END
+END;
 
 
 CREATE SERVICE "restaurant" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call insertRestaurantReservation(:nomResa,:nbPersonnes,:dateCheck,:numeroChambre);
@@ -30,7 +30,7 @@ BEGIN
      set idReservationRestaurant = (SELECT 'ID_000'
     +string((select count()+1 from RESTAURATION)));
 	RETURN idReservationRestaurant;
-END
+END;
 
 
 
