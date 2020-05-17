@@ -74,15 +74,15 @@ CREATE SERVICE "updateClient" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON MET
 
  
 CREATE SERVICE "http_searchClient" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call searchClient(:email);\
--- Permet de faire la recherche du client grâce à son email  --
--- Paramètre reçu pour la requête: email --
--- Le réponse de la procédure renvoie un type JSON  --
+-- Permet de faire la recherche du client grâce à son email  --\
+-- Paramètre reçu pour la requête: email --\
+-- Le réponse de la procédure renvoie un type JSON  --\
 
 
 CREATE SERVICE "descriptionChambre" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call descriptionChambres();\
--- Permet d'insérer les données dans la table Chambre  --
--- Paramètre reçu pour la requête: aucun --
--- Le réponse de la procédure renvoie un type JSON  --
+-- Permet d'insérer les données dans la table Chambre  --\
+-- Paramètre reçu pour la requête: aucun --\
+-- Le réponse de la procédure renvoie un type JSON  --\
 
 
 
