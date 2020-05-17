@@ -5,15 +5,15 @@
 **Classe :** 1TM1
 
 **Description du projet :** Notre projet a pour but:
-- La reservation des chambres via le site de l'hôtel
-Grâce à un formulaire de reservation sur le site de l'hôtel le client soumet une reservation.\
-Après soumission de la reservation il y a une vérification dans la base de données qui vérifie si le client existe ou non. \
+- La réservation des chambres via le site de l'hôtel
+Grâce à un formulaire de réservation sur le site de l'hôtel le client soumet une réservation.\
+Après soumission de la réservation il y a une vérification dans la base de données qui vérifie si le client existe ou non. \
 S'il n'existe pas un numéro client lui est attribué et grâce aux données recupérées sur le formulaire ces données sont créés.
 Afin de s'assurer de l'unicité de l'id du client le numéro du client se crée après la test du nom, prénom et date de naissance.\
 Il est a noté. Après la création du client la réservation était aussi enregistrée dans la base de donnée qu'un client ne peut avoir 2 adresses mails différentes.
 
-- La reservation pour le restaurant pour les clients ou non de l'hôtel
-Un formulaire de reservation restaurant nous permet de reserver pour une date donnée des tables du restaurant. Il est a noté que les client ne séjournant pas à l'hôtel peuvent aussi faire des reservations.
+- La réservation pour le restaurant pour les clients ou non de l'hôtel
+Un formulaire de réservation restaurant nous permet de réserver pour une date donnée des tables du restaurant. Il est a noté que les client ne séjournant pas à l'hôtel peuvent aussi faire des réservations.
 
 - La gestion des activités qui sont organisées à l'hôtel
 Grâce à un formulaire interactif le client par ses choix peut voir de manière instantané le résultat de ses recherches.
@@ -63,7 +63,7 @@ CREATE SERVICE "getIdClient" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL ON MET
    **- PARMENTIER Charles**\
 CREATE SERVICE "restaurant" TYPE 'RAW' AUTHORIZATION OFF USER "DBA" URL ON METHODS 'GET' AS call insertRestaurantReservation(:nomResa,:nbPersonnes,:dateCheck); \
 -- Permet d'insérer les données dans la table Restauration  --\
--- Paramètre reçu pour la requête nom de la reservation, nombre de personne, date de la reservation --\
+-- Paramètre reçu pour la requête nom de la réservation, nombre de personne, date de la réservation --\
 -- Le réponse de la procédure renvoie un type RAW  --
 
    **-KOUVAHE Serge**\
@@ -108,9 +108,9 @@ CREATE TABLE "reservations" (\
 	"dateDebut" //Date du début séjour,\
 	"dateFin" //Date de fin séjour,\
 	"prix" // Prix de la chambre,\
-	"idClient" //Client associé à la reservation; clé étrangère dans cette table,\
-	"idChambre" //Chambre associée à la reservation;clé étrangère dans cette table,\
-	"IdAgent" /Agent associé àune reservation; clé étrangère dans cette table\
+	"idClient" //Client associé à la réservation; clé étrangère dans cette table,\
+	"idChambre" //Chambre associée à la réservation;clé étrangère dans cette table,\
+	"IdAgent" /Agent associé à une réservation; clé étrangère dans cette table\
 	)
 
 		/* Table RESTAURATION : Enregistre les restaurations de l'hôtel */
@@ -120,7 +120,7 @@ CREATE TABLE "RESTAURATION" (\
 	"nomReservation" //Nom de la restauration restauration,\
 	"nbrePerso" //Nombre de personne,\
 	"dateResto" //Date de la restauration restauration,\
-	"chambreId" // chambre associée à la reservation du restaurant; clé étrangère dans cette table\
+	"chambreId" // chambre associée à la réservation du restaurant; clé étrangère dans cette table\
 	)
 	
 		/* Table CHAMBRES : Enregistre les chambres */
