@@ -87,8 +87,11 @@ CREATE SERVICE "descriptionChambre" TYPE 'JSON' AUTHORIZATION OFF USER "DBA" URL
 
 
 
+
 **Détails de la DB (Diagramme, Tables et Champs) : **\
+
 <img src="frontend/img/diagramme DB hotel projet.png">
+
 
 /* Création des tables */
 
