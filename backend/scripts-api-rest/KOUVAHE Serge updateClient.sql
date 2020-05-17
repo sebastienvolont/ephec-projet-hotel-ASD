@@ -2,7 +2,7 @@
 
 -- Procedure de modification des données du client--
 
-ALTER PROCEDURE "DBA"."updateClient"( IN idclient INTEGER , nom CHAR (50), prenom CHAR (50), dateNaiss DATE )
+ALTER PROCEDURE updateClient( IN idclient INTEGER , nom CHAR (50), prenom CHAR (50), dateNaiss DATE )
     RESULT( idclient INTEGER , nom CHAR(50), pren CHAR (50), dateNaiss DATE ) 
 BEGIN
     Call sa_set_http_header('Access-Control-Allow-Origin', '*');
