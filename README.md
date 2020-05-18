@@ -113,7 +113,7 @@ CREATE TABLE "reservations" (\
 	"IdAgent" /Agent associé à une réservation; clé étrangère dans cette table\
 	)
 
-		/* Table RESTAURATION : Enregistre les restaurations de l'hôtel */
+		/* Table RESTAURATION : Enregistre les reservations du restaurant de l'hôtel */
 		
 CREATE TABLE "RESTAURATION" (\
 	"idRestauration" //Identifiant de la table restauration,\
