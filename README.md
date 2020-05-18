@@ -13,28 +13,28 @@ Afin de s'assurer de l'unicité de l'id du client le numéro du client se crée 
 Il est a noté. Après la création du client la réservation était aussi enregistrée dans la base de donnée qu'un client ne peut avoir 2 adresses mails différentes.
 
 - La réservation pour le restaurant pour les clients ou non de l'hôtel
-Un formulaire de réservation restaurant nous permet de réserver pour une date donnée des tables du restaurant. Il est a noté que les client ne séjournant pas à l'hôtel peuvent aussi faire des réservations.
+Un formulaire de réservation restaurant nous permet de réserver pour une date donnée des tables du restaurant. Il est a noter que les clients qui ne séjournent pas à l'hôtel peuvent aussi faire des réservations.
 
 - La gestion des activités qui sont organisées à l'hôtel
-Grâce à un formulaire interactif le client par ses choix peut voir de manière instantané le résultat de ses recherches.
+Grâce à un formulaire interactif le client par ses choix peut voir de manière instantanée le résultat de ses recherches.
 
 **Aspects implémentés :**
-backend : Une base de données permettant de mémoriser les données de réservation chambre et restautant encodé par le client.
+backend : Une base de données permettant de mémoriser les données de réservation chambre et restautant encodées par le client.
 Une base de donnée qui permet de faire des recherches sur les activités proposées par l'hôtel.
 backend : Un serveur web capable de fournir les pages html, js, css, ainsi que de proposer des webservices
 backend : Des webservices (avec les procédures associées) :
-- Un webservice qui charge la description des chambres depuis la depuis la base de données et la mise à jours des données clients. (KOUVAHE)
+- Un webservice qui charge la description des chambres depuis la base de données et la mise à jours des données clients. (KOUVAHE)
 - Un webservice qui permet d'insérer les données dans la table client  après soumission du formulaire réservation. (BLERVAQUE)
-- Un webservice permettant de renvoyer une liste d'activitées proposées par l'hôtel selon le jour de la semaine et le type d'activitée.
+- Un webservice permettant de renvoyer une liste d'activités proposées par l'hôtel selon le jour de la semaine et le type d'activité.
 (VOLONT)
-- un webservice permettant d'inserer les données dans la table restauration grâce du formulaire de réservation. (PARMENTIER)
+- un webservice permettant d'insérer les données dans la table restauration grâce au formulaire de réservation. (PARMENTIER)
 
 
 frontend : Une page web (html, js, css) permettant d'appeler les webservices et de traiter les réponses, qui propose une interface utilisateur pour:
 -Réserver sa chambre
 -Réserver une table au restaurant
 -Encoder ses informations (nom, prénom, nombre de personne, date)
--Permettant de voyager sur différente page du site (Accueil, réservation, Chambres, Contact...)
+-Permettant de voyager sur différentes pages du site (Accueil, réservation, Chambres, Contact...)
 
 **Détail api rest :**
 
